@@ -12,6 +12,7 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: whiteColor,
       appBar: AppBar(
         backgroundColor: brownColor,
         leading: IconButton(
@@ -189,13 +190,3 @@ class CartView extends StatelessWidget {
     );
   }
 }
-
-/*
-...cartController.cartItems.values.map(
-              (item) => ListTile(
-                title: Text('${item.productModel.title} (${item.size})'),
-                subtitle: Text('Quantity: ${item.quantity}'),
-                trailing: Text('\$${item.totalPrice.toStringAsFixed(2)}'),
-              ),
-            ),
-*/

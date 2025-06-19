@@ -183,7 +183,7 @@ class ProductDetail extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 25.w, right: 25.w),
             child: ReadMoreText(
-              productModel.decription,
+              productModel.description,
               textAlign: TextAlign.justify,
               style: GoogleFonts.athiti(
                 color: brownColor,

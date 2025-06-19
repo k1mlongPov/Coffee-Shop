@@ -24,8 +24,8 @@ Widget reusableBtn(
   Color bgColor,
 ) {
   return Container(
-    width: 140.w,
-    height: 55.h,
+    width: 130.w,
+    height: 50.h,
     decoration: BoxDecoration(
       color: bgColor,
       borderRadius: BorderRadius.circular(75.r),
@@ -44,7 +44,7 @@ Widget reusableBtn(
 
 Widget buildThirdPartyLogin(String iconPath, String text, Function()? onTap) {
   return Padding(
-    padding: EdgeInsets.only(left: 35.w, right: 35.w),
+    padding: EdgeInsets.only(left: 40.w, right: 40.w),
     child: GestureDetector(
       onTap: onTap,
       child: Container(

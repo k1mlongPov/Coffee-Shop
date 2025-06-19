@@ -1,57 +1,72 @@
 import 'package:coffeeshop/home/widgets/reusable_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextFieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
-  final bool isPass = false;
   final String hintText;
   final String labelText;
-  final IconData? icon;
+  final IconData? prefixIcon;
+  final IconButton? suffixIcon;
+  final bool isPassword;
+  final RxBool? obscureText;
+
   const TextFieldInput({
     super.key,
     required this.textEditingController,
     required this.hintText,
     required this.labelText,
-    this.icon,
+    this.isPassword = true,
+    this.obscureText,
+    this.prefixIcon,
+    this.suffixIcon,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      //Type TextField
       width: double.infinity,
       height: 50.h,
-      child: TextField(
-        controller: textEditingController,
-        decoration: InputDecoration(
-          enabledBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: brownColor, width: 2),
-          ),
-          focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: brownColor),
-          ),
-          prefixIcon: Icon(
-            icon,
-            color: brownColor,
-          ),
-          labelText: labelText,
-          labelStyle: GoogleFonts.averiaLibre(
-            color: brownColor,
-            fontSize: 18.sp,
-            fontWeight: FontWeight.normal,
-          ),
-          hintText: hintText,
-          // pass the hint text parameter here
-          hintStyle: const TextStyle(color: brownColor),
+      child: isPassword && obscureText != null
+          ? Obx(() => buildTextField(obscureText!.value))
+          : buildTextField(false),
+    );
+  }
+
+  Widget buildTextField(bool isObscured) {
+    return TextField(
+      onTapOutside: (event) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      controller: textEditingController,
+      obscureText: isPassword ? isObscured : false,
+      decoration: InputDecoration(
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: brownColor, width: 2.w),
         ),
-        obscureText: isPass,
-        style: GoogleFonts.averiaLibre(
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: brownColor),
+        ),
+        prefixIcon: Icon(
+          prefixIcon,
           color: brownColor,
-          fontSize: 14.sp,
+        ),
+        suffixIcon: suffixIcon,
+        labelText: labelText,
+        labelStyle: GoogleFonts.averiaLibre(
+          color: brownColor,
+          fontSize: 16.sp,
           fontWeight: FontWeight.normal,
         ),
+        hintText: hintText,
+        hintStyle: const TextStyle(color: brownColor),
+      ),
+      style: GoogleFonts.averiaLibre(
+        color: brownColor,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.normal,
       ),
     );
   }

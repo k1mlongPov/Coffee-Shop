@@ -1,6 +1,5 @@
 import 'package:coffeeshop/home/controller/product_controller.dart';
 import 'package:coffeeshop/home/model/category_model.dart';
-import 'package:coffeeshop/home/model/product_model.dart';
 import 'package:coffeeshop/home/widgets/category_items.dart';
 import 'package:coffeeshop/home/widgets/reusable_items.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +10,9 @@ import 'package:sticky_headers/sticky_headers/widget.dart';
 // ignore: must_be_immutable
 class CategoryScreen extends StatelessWidget {
   CategoryScreen({super.key, required this.categoryModel});
-  final controller = Get.put(ProductController());
+  final ProductController productController = Get.put(ProductController());
   final CategoryModel categoryModel;
-  late List listByCategory = listModel
+  late List listByCategory = productController.myProducts
       .where((element) => element.categoryId == categoryModel.id)
       .toList();
   @override

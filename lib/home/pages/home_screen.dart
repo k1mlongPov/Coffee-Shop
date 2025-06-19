@@ -1,4 +1,3 @@
-import 'package:coffeeshop/auth/controller/auth_controller.dart';
 import 'package:coffeeshop/home/controller/bottom_nav_controller.dart';
 import 'package:coffeeshop/home/controller/cart_controller.dart';
 import 'package:coffeeshop/home/controller/search_controller.dart';
@@ -23,28 +22,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            AuthController.instance.signOutUser();
-          },
-          icon: const Icon(
-            Icons.logout_rounded,
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Obx(
-              () => Icon(
-                searchController.isExpanded.value ? null : Icons.search,
-                size: 20,
-              ),
-            ),
-            onPressed: searchController.toggleSearch, // Correctly toggle search
-          ),
-        ],
-        backgroundColor: brownColor,
-      ),
       backgroundColor: whiteColor,
       body: Obx(() => pages[navController.selectedIndex.value]),
       bottomNavigationBar: BottomAppBar(
@@ -166,26 +143,7 @@ class HomeScreen extends StatelessWidget {
 
 final List<Widget> pages = [
   HomePage(),
-  //ProductView(),
   FavoriteScreen(),
   LocationScreen(),
   ProfileScreen(),
 ];
-
-
-/* // Reactive body
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          currentIndex: navController.selectedIndex.value,
-          onTap: navController.changeTabIndex,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: "Favorite"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.location_on), label: "Location"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-          ],
-        ),
-      ),
-      */

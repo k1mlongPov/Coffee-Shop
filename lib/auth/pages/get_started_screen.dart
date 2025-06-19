@@ -18,7 +18,7 @@ class GetStartedScreen extends StatelessWidget {
             SizedBox(height: 60.h),
             Container(
               width: double.infinity,
-              height: 350.h,
+              height: 330.h,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("asset/images/getstarted_coffee_img.png"),
@@ -32,8 +32,8 @@ class GetStartedScreen extends StatelessWidget {
                     left: 20.w,
                     child: Image.asset(
                       "asset/icons/coffee-beans2.png",
-                      width: 50.w,
-                      height: 50.h,
+                      width: 40.w,
+                      height: 40.h,
                     ),
                   ),
                   Positioned(
@@ -41,8 +41,8 @@ class GetStartedScreen extends StatelessWidget {
                     right: 20.w,
                     child: Image.asset(
                       "asset/icons/tea-leaf.png",
-                      width: 60.w,
-                      height: 60.h,
+                      width: 50.w,
+                      height: 50.h,
                     ),
                   ),
                   Positioned(
@@ -50,8 +50,8 @@ class GetStartedScreen extends StatelessWidget {
                     right: 20.w,
                     child: Image.asset(
                       "asset/icons/coffee-beans3.png",
-                      width: 60.w,
-                      height: 60.h,
+                      width: 50.w,
+                      height: 50.h,
                     ),
                   ),
                 ],
@@ -66,7 +66,7 @@ class GetStartedScreen extends StatelessWidget {
                         "Welcome to",
                         style: GoogleFonts.julee(
                           textStyle: TextStyle(
-                            fontSize: 40.sp,
+                            fontSize: 32.sp,
                             fontWeight: FontWeight.bold,
                             color: const Color.fromARGB(255, 114, 74, 40),
                           ),
@@ -78,7 +78,7 @@ class GetStartedScreen extends StatelessWidget {
                         "Elite Cofé",
                         style: GoogleFonts.julee(
                           textStyle: TextStyle(
-                            fontSize: 50.sp,
+                            fontSize: 46.sp,
                             fontWeight: FontWeight.bold,
                             color: const Color.fromARGB(255, 114, 74, 40),
                           ),
@@ -92,7 +92,7 @@ class GetStartedScreen extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.only(top: 30.h),
                 width: 250.w,
-                height: 60.h,
+                height: 50.h,
                 decoration: BoxDecoration(
                   color: brownColor,
                   borderRadius: BorderRadius.circular(25.r),
@@ -102,7 +102,7 @@ class GetStartedScreen extends StatelessWidget {
                     "Get Started",
                     style: GoogleFonts.averiaLibre(
                       textStyle: TextStyle(
-                        fontSize: 22.sp,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                         color: whiteColor,
                       ),

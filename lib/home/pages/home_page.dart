@@ -16,65 +16,92 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: whiteColor,
-        body: Obx(() => RefreshIndicator(
-              backgroundColor: brownColor,
-              color: whiteColor,
-              onRefresh: () => refreshAppController.refreshItems(),
-              child: Padding(
-                padding: EdgeInsets.all(25.r),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+      backgroundColor: whiteColor,
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Get.offAllNamed('/home');
+          },
+          icon: Icon(
+            Icons.coffee_outlined,
+            size: 30.r,
+            color: whiteColor,
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: Obx(
+              () => Icon(
+                searchController.isExpanded.value ? null : Icons.search,
+                size: 20,
+                color: whiteColor,
+              ),
+            ),
+            onPressed: searchController.toggleSearch, // Correctly toggle search
+          ),
+        ],
+        backgroundColor: brownColor,
+      ),
+      body: Obx(
+        () => RefreshIndicator(
+          backgroundColor: brownColor,
+          color: whiteColor,
+          onRefresh: () => refreshAppController.refreshItems(),
+          child: Padding(
+            padding: EdgeInsets.all(25.r),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.category_rounded,
-                            color: brownColor,
-                          ),
-                          SizedBox(width: 10.w),
-                          reusableTxt(
-                            "Category",
-                            brownColor,
-                            18.sp,
-                            FontWeight.bold,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 16.h),
-                      const CatagoryWidget(),
-                      SizedBox(height: 16.h),
-                      Divider(
-                        height: 1.h,
-                        thickness: 3.w,
+                      const Icon(
+                        Icons.category_rounded,
                         color: brownColor,
                       ),
-                      SizedBox(height: 32.h),
-                      SearchWidget(),
+                      SizedBox(width: 10.w),
                       reusableTxt(
-                          'All Drinks', brownColor, 18.sp, FontWeight.bold),
-                      SizedBox(height: 20.h),
-                      GridView.count(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 25,
-                        mainAxisSpacing: 25,
-                        childAspectRatio: 1 / 1.6,
-                        shrinkWrap: true,
-                        primary: false,
-                        children: List.generate(
-                          searchController.filteredList.length,
-                          (index) => productItems(
-                            searchController.filteredList[index],
-                            index,
-                          ),
-                        ),
+                        "Category",
+                        brownColor,
+                        18.sp,
+                        FontWeight.bold,
                       ),
-                      SizedBox(height: 30.h),
                     ],
                   ),
-                ),
+                  SizedBox(height: 16.h),
+                  const CatagoryWidget(),
+                  SizedBox(height: 16.h),
+                  Divider(
+                    height: 1.h,
+                    thickness: 3.w,
+                    color: brownColor,
+                  ),
+                  SizedBox(height: 32.h),
+                  SearchWidget(),
+                  reusableTxt('All Drinks', brownColor, 18.sp, FontWeight.bold),
+                  SizedBox(height: 20.h),
+                  GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 25,
+                    mainAxisSpacing: 25,
+                    childAspectRatio: 1 / 1.6,
+                    shrinkWrap: true,
+                    primary: false,
+                    children: List.generate(
+                      searchController.filteredList.length,
+                      (index) => productItems(
+                        searchController.filteredList[index],
+                        index,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30.h),
+                ],
               ),
-            )));
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -1,1 +1,35 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"coffee-shop-16512","appId":"1:914111488509:android:7560f2f0ecd5b63753b994","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"coffee-shop-16512","configurations":{"android":"1:914111488509:android:7560f2f0ecd5b63753b994"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "coffee-shop-16512",
+          "appId": "1:914111488509:android:7560f2f0ecd5b63753b994",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "coffee-shop-16512",
+          "configurations": {
+            "android": "1:914111488509:android:7560f2f0ecd5b63753b994"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
