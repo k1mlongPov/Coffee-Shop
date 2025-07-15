@@ -8,7 +8,6 @@ import 'package:coffeeshop/home/controller/favorite_controller.dart';
 import 'package:coffeeshop/home/pages/favorite_screen.dart';
 import 'package:coffeeshop/home/pages/home_page.dart';
 import 'package:coffeeshop/home/pages/home_screen.dart';
-import 'package:coffeeshop/home/pages/location_screen.dart';
 import 'package:coffeeshop/home/pages/profile_screen.dart';
 import 'package:coffeeshop/home/pages/shopping_cart_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -48,7 +47,6 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/phone', page: () => PhoneAuthScreen()),
           GetPage(name: '/homepage', page: () => HomePage()),
           GetPage(name: '/favorite', page: () => FavoriteScreen()),
-          GetPage(name: '/location', page: () => const LocationScreen()),
           GetPage(name: '/profile', page: () => ProfileScreen()),
           GetPage(name: '/cart', page: () => const ShoppingCartScreen()),
           // Add more routes as needed

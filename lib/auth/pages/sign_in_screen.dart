@@ -42,6 +42,7 @@ class SignInScreen extends StatelessWidget {
                     textEditingController: emailController,
                     hintText: "enter your email address",
                     labelText: "Email",
+                    keyboardType: TextInputType.emailAddress,
                     prefixIcon: Icons.email,
                   ),
                 ),
@@ -53,6 +54,7 @@ class SignInScreen extends StatelessWidget {
                       textEditingController: passwordController,
                       hintText: "enter your password",
                       labelText: "Password",
+                      keyboardType: TextInputType.text,
                       obscureText: authController.isPasswordHidden,
                       prefixIcon: Icons.lock,
                       suffixIcon: IconButton(
@@ -86,6 +88,7 @@ class SignInScreen extends StatelessWidget {
                           "Sign in",
                           whiteColor,
                           brownColor,
+                          50.h,
                         ),
                       ),
                       Text(

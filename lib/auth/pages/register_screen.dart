@@ -70,6 +70,7 @@ class RegisterScreen extends StatelessWidget {
                       textEditingController: _usernameController,
                       hintText: "enter your username",
                       labelText: "Username",
+                      keyboardType: TextInputType.name,
                       prefixIcon: Icons.person,
                     ),
                   ),
@@ -80,6 +81,7 @@ class RegisterScreen extends StatelessWidget {
                       textEditingController: _emailController,
                       hintText: "enter your email",
                       labelText: "Email",
+                      keyboardType: TextInputType.emailAddress,
                       prefixIcon: Icons.email,
                     ),
                   ),
@@ -90,6 +92,7 @@ class RegisterScreen extends StatelessWidget {
                       textEditingController: _passwordController,
                       hintText: "enter your password",
                       labelText: "Password",
+                      keyboardType: TextInputType.text,
                       prefixIcon: Icons.lock_rounded,
                       obscureText: authController.isPasswordHidden,
                       suffixIcon: IconButton(
@@ -110,6 +113,7 @@ class RegisterScreen extends StatelessWidget {
                     child: TextFieldInput(
                       textEditingController: _confirmPasswordController,
                       hintText: "enter your confirm password",
+                      keyboardType: TextInputType.text,
                       labelText: "Confirm Password",
                       prefixIcon: Icons.lock_reset_sharp,
                       obscureText: authController.isPasswordHidden,
@@ -125,12 +129,8 @@ class RegisterScreen extends StatelessWidget {
                           onTap: () {
                             _handleSignUp();
                           },
-                          child: reusableBtn(
-                            "register",
-                            "Sign up",
-                            whiteColor,
-                            brownColor,
-                          ),
+                          child: reusableBtn("register", "Sign up", whiteColor,
+                              brownColor, 50.h),
                         ),
                         Text(
                           "Forgot Password",

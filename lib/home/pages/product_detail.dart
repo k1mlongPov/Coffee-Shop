@@ -133,6 +133,7 @@ class ProductDetail extends StatelessWidget {
                 color: Colors.amber,
               ),
               onRatingUpdate: (rating) {
+                // ignore: avoid_print
                 print(rating);
               },
             ),
@@ -150,7 +151,7 @@ class ProductDetail extends StatelessWidget {
                     selectedColor: brownColor,
                     label: reusableTxt(
                       size,
-                      selectedSize == size ? whiteColor : brownColor,
+                      selectedSize.toString() == size ? whiteColor : brownColor,
                       14.sp,
                       FontWeight.normal,
                     ),

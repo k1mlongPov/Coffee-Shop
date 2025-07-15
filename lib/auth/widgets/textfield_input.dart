@@ -12,12 +12,14 @@ class TextFieldInput extends StatelessWidget {
   final IconButton? suffixIcon;
   final bool isPassword;
   final RxBool? obscureText;
+  final TextInputType keyboardType;
 
   const TextFieldInput({
     super.key,
     required this.textEditingController,
     required this.hintText,
     required this.labelText,
+    required this.keyboardType,
     this.isPassword = true,
     this.obscureText,
     this.prefixIcon,

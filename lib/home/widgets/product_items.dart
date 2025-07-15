@@ -75,6 +75,7 @@ Widget productItems(ProductModel productModel, int index) {
                 color: Colors.amber,
               ),
               onRatingUpdate: (rating) {
+                // ignore: avoid_print
                 print(rating);
               },
             ),

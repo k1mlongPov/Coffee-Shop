@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 class OTPVerificationScreen extends StatelessWidget {
   final otpController = TextEditingController();
+
   final authController = Get.find<AuthController>();
 
   OTPVerificationScreen({super.key});
@@ -24,14 +25,16 @@ class OTPVerificationScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Obx(() => authController.isLoading.value
-                ? CircularProgressIndicator()
-                : ElevatedButton(
-                    onPressed: () {
-                      authController.verifyOTP(otpController.text.trim());
-                    },
-                    child: const Text('Verify'),
-                  )),
+            Obx(
+              () => authController.isLoading.value
+                  ? const CircularProgressIndicator()
+                  : ElevatedButton(
+                      onPressed: () {
+                        authController.verifyOTP(otpController.text.trim());
+                      },
+                      child: const Text('Verify'),
+                    ),
+            ),
           ],
         ),
       ),

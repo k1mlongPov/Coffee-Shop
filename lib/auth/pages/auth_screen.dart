@@ -30,12 +30,12 @@ class AuthScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () => Get.toNamed("/signin"),
                         child: reusableBtn(
-                            "sign in", "Sign in", whiteColor, brownColor),
+                            "sign in", "Sign in", whiteColor, brownColor, 50.h),
                       ),
                       GestureDetector(
                         onTap: () => Get.toNamed("/register"),
-                        child: reusableBtn(
-                            "register", "Sign up", brownColor, whiteColor),
+                        child: reusableBtn("register", "Sign up", brownColor,
+                            whiteColor, 50.h),
                       ),
                     ],
                   ),

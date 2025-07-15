@@ -22,10 +22,11 @@ Widget reusableBtn(
   String btnName,
   Color fontColor,
   Color bgColor,
+  double height,
 ) {
   return Container(
     width: 130.w,
-    height: 50.h,
+    height: height,
     decoration: BoxDecoration(
       color: bgColor,
       borderRadius: BorderRadius.circular(75.r),
@@ -35,7 +36,7 @@ Widget reusableBtn(
       child: reusableTxt(
         btnName,
         fontColor,
-        18.sp,
+        16.sp,
         FontWeight.bold,
       ),
     ),

@@ -3,7 +3,6 @@ import 'package:coffeeshop/home/controller/cart_controller.dart';
 import 'package:coffeeshop/home/controller/search_controller.dart';
 import 'package:coffeeshop/home/pages/favorite_screen.dart';
 import 'package:coffeeshop/home/pages/home_page.dart';
-import 'package:coffeeshop/home/pages/location_screen.dart';
 import 'package:coffeeshop/home/pages/profile_screen.dart';
 import 'package:coffeeshop/home/widgets/reusable_items.dart';
 import 'package:flutter/material.dart';
@@ -48,13 +47,6 @@ class HomeScreen extends StatelessWidget {
                   Icons.favorite_border,
                   1,
                   'Favorite',
-                ),
-                bottomAppBarItems(
-                  context,
-                  Icons.location_on_rounded,
-                  Icons.location_on_outlined,
-                  2,
-                  'Location',
                 ),
                 bottomAppBarItems(
                   context,
@@ -144,6 +136,5 @@ class HomeScreen extends StatelessWidget {
 final List<Widget> pages = [
   HomePage(),
   FavoriteScreen(),
-  LocationScreen(),
   ProfileScreen(),
 ];

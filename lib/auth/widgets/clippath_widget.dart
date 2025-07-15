@@ -5,6 +5,7 @@ class RPSCustomPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // Layer 1
 
+    // ignore: non_constant_identifier_names
     Paint paint_fill_0 = Paint()
       ..color = const Color.fromARGB(255, 160, 111, 72)
       ..style = PaintingStyle.fill
@@ -33,6 +34,7 @@ class RPSCustomPainter extends CustomPainter {
 
     // Layer 1
 
+    // ignore: non_constant_identifier_names
     Paint paint_stroke_0 = Paint()
       ..color = const Color.fromARGB(255, 33, 150, 243)
       ..style = PaintingStyle.stroke

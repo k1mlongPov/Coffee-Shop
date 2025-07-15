@@ -1,6 +1,6 @@
 import 'package:coffeeshop/home/controller/product_controller.dart';
 import 'package:coffeeshop/home/model/category_model.dart';
-import 'package:coffeeshop/home/widgets/category_items.dart';
+import 'package:coffeeshop/home/widgets/product_items.dart';
 import 'package:coffeeshop/home/widgets/reusable_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,31 +63,29 @@ class CategoryScreen extends StatelessWidget {
               ),
             ],
           ),
-          content: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 25,
-                  mainAxisSpacing: 25,
-                  childAspectRatio: 1 / 1.6,
-                  shrinkWrap: true,
-                  primary: false,
-                  children: List.generate(
-                    listByCategory.length,
-                    (index) => itemByCategory(
-                      context,
-                      listByCategory[index],
-                      index,
+          content: Obx(
+            () => Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 25,
+                    mainAxisSpacing: 25,
+                    childAspectRatio: 1 / 1.6,
+                    shrinkWrap: true,
+                    primary: false,
+                    children: List.generate(
+                      listByCategory.length,
+                      (index) => productItems(listByCategory[index], index),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-            ],
+                const SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
           ),
         ),
       ),

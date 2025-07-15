@@ -35,6 +35,7 @@ class PickImageService {
 
       // Get the download URL
       final url = await ref.getDownloadURL();
+      // ignore: avoid_print
       print("Image uploaded. URL: $url");
       return url;
     } catch (e) {
@@ -61,6 +62,7 @@ class PickImageService {
       'photoUrl': photoUrl,
     });
 
+    // ignore: avoid_print
     print("Photo URL updated in Firestore: $photoUrl");
   }
 }
